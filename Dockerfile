@@ -12,4 +12,11 @@ RUN npm run build
 
 FROM nginx:latest
 
+USER root
+
+RUN mkdir -p /var/cache/nginx/client_temp && \
+    chown -R nginx:nginx /var/cache/nginx
+
+USER 1001
+
 COPY --from=builder /tmp/build/build/. /usr/share/nginx/html/
