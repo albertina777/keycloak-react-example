@@ -4,10 +4,10 @@ USER 1001
 
 WORKDIR /app
 
+RUN chown -R 1001:1001 /app
+
 # Copy package.json and package-lock.json (or yarn.lock)
 COPY package*.json ./
-
-RUN chown -R 1001:1001 /app
 
 # Install dependencies
 RUN npm install
