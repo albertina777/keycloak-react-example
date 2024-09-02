@@ -12,6 +12,6 @@ RUN npm run build
 
 FROM nginx:latest
 
-RUN rm /usr/share/nginx/html/*
+RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
 
 COPY --from=builder /tmp/build/build/. /usr/share/nginx/html/
