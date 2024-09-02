@@ -60,7 +60,7 @@ function App() {
     <div className="App">
       <div className='grid'>
         <div className='col-12'>
-          <h1>My Secured React App</h1>
+          <h1>Red Hat Build of KeyCloak React Application</h1>
         </div>
       </div>
       <div className="grid">
