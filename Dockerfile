@@ -1,4 +1,4 @@
-FROM node:latest as builder
+FROM registry.access.redhat.com/ubi8/nodejs-18:1-122.1724231540 as builder
 
 RUN mkdir /build
 
