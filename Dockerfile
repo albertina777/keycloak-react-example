@@ -10,8 +10,13 @@ RUN npm install --no-save
 
 RUN npm run build
 
-FROM nginx:latest
+FROM nginx:alpine
 
-RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+
+RUN chmod -R 777 /var/log/nginx /var/cache/nginx /var/run \
+     && chgrp -R 0 /etc/nginx \
+     && chmod -R g+rwX /etc/nginx \
+     && rm /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /tmp/build/build/. /usr/share/nginx/html/
