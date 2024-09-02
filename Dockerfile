@@ -1,6 +1,10 @@
 FROM registry.access.redhat.com/ubi8/nodejs-18:1-122.1724231540 as builder
 
-WORKDIR /tmp/build
+USER 1001
+
+RUN mkdir /build
+
+WORKDIR /build
 
 COPY  . .
 
