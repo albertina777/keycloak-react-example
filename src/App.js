@@ -13,8 +13,8 @@ import Keycloak from 'keycloak-js';
   Init Options
 */
 let initOptions = {
-  url: 'http://localhost:8080/',
-  realm: 'master',
+  url: 'https://example-keycloak-service-rhbk.apps.cluster-4qdvm.4qdvm.sandbox2184.opentlc.com/',
+  realm: 'redhat-demo',
   clientId: 'react-client',
 }
 
