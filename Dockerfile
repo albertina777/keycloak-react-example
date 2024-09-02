@@ -18,7 +18,7 @@ RUN chmod -R 777 /var/log/nginx /var/cache/nginx /var/run \
 COPY --from=builder /tmp/build /usr/share/nginx/html/
 
 # Expose port 80
-EXPOSE 3000
+EXPOSE 8080
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
