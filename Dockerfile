@@ -18,7 +18,3 @@ RUN chmod -R 777 /var/log/nginx /var/cache/nginx /var/run \
      && rm /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /tmp/build/build/. /usr/share/nginx/html/
-
-WORKDIR /usr/share/nginx/html/
-
-CMD ["npm", "start"]
