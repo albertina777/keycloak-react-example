@@ -15,6 +15,7 @@ FROM nginx:latest
 USER root
 
 RUN mkdir -p /var/cache/nginx/client_temp && \
+    mkdir -p /var/cache/nginx/proxy_temp && \
     chown -R nginx:nginx /var/cache/nginx
 
 USER 1001
