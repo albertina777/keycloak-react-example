@@ -12,12 +12,10 @@ RUN npm run build
 
 FROM nginx:latest
 
-USER root
+RUN mkdir -p /etc/nginx/ssl/ && \
+    chown -R nginx:nginx /etc/nginx/ssl/ && \
+    chmod -R 755 /etc/nginx/ssl/
 
-RUN mkdir -p /var/cache/nginx/client_temp && \
-    mkdir -p /var/cache/nginx/proxy_temp && \
-    chown -R nginx:nginx /var/cache/nginx
-
-USER 1001
+USER nginx
 
 COPY --from=builder /tmp/build/build/. /usr/share/nginx/html/
