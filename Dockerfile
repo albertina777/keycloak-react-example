@@ -6,7 +6,7 @@ WORKDIR /tmp/build
 
 COPY  . .
 
-RUN npm install
+RUN npm install --no-save
 
 RUN npm run build
 
