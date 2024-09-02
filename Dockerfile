@@ -12,10 +12,6 @@ RUN npm run build
 
 FROM nginx:latest
 
-RUN mkdir -p /etc/nginx/ssl/ && \
-    chown -R nginx:nginx /etc/nginx/ssl/ && \
-    chmod -R 755 /etc/nginx/ssl/
-
-USER nginx
+RUN rm /usr/share/nginx/html/*
 
 COPY --from=builder /tmp/build/build/. /usr/share/nginx/html/
