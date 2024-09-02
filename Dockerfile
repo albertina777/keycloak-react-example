@@ -4,6 +4,8 @@ WORKDIR /tmp/build
 
 COPY  . .
 
+RUN npm install
+
 RUN npm run build
 
 FROM nginx:latest
